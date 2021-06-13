@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiCatalogoJogos</name>
+    </assembly>
+    <members>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Buscar todos os jogos de forma paginada
+            </summary>
+            <remarks>
+            Não é possível retornar os jogos sem paginação
+            </remarks>
+            <param name="pagina">Indica qual página está sendo consultada. Mínimo 1</param>
+            <param name="quantidade">Indica a quantidade de registros por página. Mínimo 1 e máximo 50</param>
+            <response code="200">Retorna a lista de jogos</response>
+            <response code="204">Caso não haja jogos</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.Obter(System.Guid)">
+            <summary>
+            Buscar um jogo pelo seu Id
+            </summary>
+            <param name="idJogo">Id do jogo buscado</param>
+            <response code="200">Retornar o jogo filtrado</response>
+            <response code="204">Caso não haja jogo com este id</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.InserirJogo(ApiCatalogoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Insere jogos 
+            </summary>
+            <param name="jogoInputModel">Utiliza o formato JSON para inserir os dados no servidor</param>
+            <response code="200">Insere jogo ao BD</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,ApiCatalogoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Modifica um jogo já inserido no banco
+            </summary>
+            <param name="idJogo">Id do jogo a ser modificado</param>
+            <param name="jogoInputModel">Parâmetro no formato JSON</param>
+            <response code="200">Jogo modificado</response>
+            <response code="204">Caso não haja jogo com este id</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,System.Double)">
+            <summary>
+            Modifica o preço de um jogo
+            </summary>
+            <param name="idJogo">Id do jogo que com o preço a ser modificado</param>
+            <param name="preco">Novo preço do jogo</param>
+            <response code="200">Preço do jogo modificado com sucesso</response>
+            <response code="204">Caso não haja jogo com este id</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.ApagarJogo(System.Guid)">
+            <summary>
+            Deletar um jogo pelo id
+            </summary>
+            <param name="idJogo">Id do jogo a ser deletado</param>
+            <response code="200">Jogo deletado</response>
+            <response code="204">Caso não haja jogo com este id</response>
+        </member>
+    </members>
+</doc>
